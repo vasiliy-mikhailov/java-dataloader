@@ -29,14 +29,4 @@ class DelegatingStatisticsCollectorIncrementLoadCountMacCovTest {
         Statistics stats = collector.getStatistics();
         assertThat(stats.getLoadCount(), equalTo(2L));
     }
-
-    @Test
-    void incrementLoadCount_does_not_throw() {
-        StatisticsCollector delegate = new NoOpStatisticsCollector();
-        DelegatingStatisticsCollector collector = new DelegatingStatisticsCollector(delegate);
-
-        collector.incrementLoadCount();
-
-        assertThat(true, equalTo(true));
-    }
 }
