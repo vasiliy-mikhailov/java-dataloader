@@ -17,10 +17,7 @@ class ThreadLocalStatisticsCollectorIncrementBatchLoadCountByMacMutR2Test {
 
     @Test
     void incrementBatchLoadCountBy_updates_overall_stats() {
-        // Call the method that the mutant modifies (removes a call to overallCollector)
         collector.incrementBatchLoadCountBy(5);
-
-        // Assert that the overall statistics reflect the increment
         Statistics overallStats = collector.getOverallStatistics();
         assertThat(overallStats.getBatchLoadCount(), equalTo(5L));
     }

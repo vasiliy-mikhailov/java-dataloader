@@ -18,7 +18,6 @@ class ThreadLocalStatisticsCollectorIncrementBatchLoadCountByMacCovTest {
 
     @Test
     void incrementBatchLoadCountBy_deprecated_no_context() {
-        // Reset to ensure clean state
         collector.resetThread();
 
         collector.incrementBatchLoadCountBy(5);
@@ -29,7 +28,6 @@ class ThreadLocalStatisticsCollectorIncrementBatchLoadCountByMacCovTest {
 
     @Test
     void incrementBatchLoadCountBy_with_context() {
-        // Reset to ensure clean state
         collector.resetThread();
 
         IncrementBatchLoadCountByStatisticsContext<String> context = new IncrementBatchLoadCountByStatisticsContext<>("test-key", 10);
@@ -41,7 +39,6 @@ class ThreadLocalStatisticsCollectorIncrementBatchLoadCountByMacCovTest {
 
     @Test
     void incrementBatchLoadCountBy_accumulates() {
-        // Reset to ensure clean state
         collector.resetThread();
 
         collector.incrementBatchLoadCountBy(5);
