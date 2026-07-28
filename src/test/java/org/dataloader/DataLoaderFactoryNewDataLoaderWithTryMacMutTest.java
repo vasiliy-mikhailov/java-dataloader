@@ -14,7 +14,6 @@ class DataLoaderFactoryNewDataLoaderWithTryMacMutTest {
 
     @Test
     void newDataLoaderWithTry_noOptions() {
-        // covers newDataLoaderWithTry:86
         BatchLoader<String, Try<String>> loader = keys -> CompletableFuture.completedFuture(
                 keys.stream().map(Try::succeeded).collect(Collectors.toList())
         );
@@ -27,7 +26,6 @@ class DataLoaderFactoryNewDataLoaderWithTryMacMutTest {
 
     @Test
     void newDataLoaderWithTry_withOptions() {
-        // covers newDataLoaderWithTry:102
         BatchLoader<String, Try<String>> loader = keys -> CompletableFuture.completedFuture(
                 keys.stream().map(Try::succeeded).collect(Collectors.toList())
         );
@@ -42,7 +40,6 @@ class DataLoaderFactoryNewDataLoaderWithTryMacMutTest {
 
     @Test
     void newDataLoaderWithTry_withNameAndOptions() {
-        // covers newDataLoaderWithTry:119
         BatchLoader<String, Try<String>> loader = keys -> CompletableFuture.completedFuture(
                 keys.stream().map(Try::succeeded).collect(Collectors.toList())
         );
@@ -58,7 +55,6 @@ class DataLoaderFactoryNewDataLoaderWithTryMacMutTest {
 
     @Test
     void newDataLoaderWithTry_context_noOptions() {
-        // covers newDataLoaderWithTry:179
         BatchLoaderWithContext<String, Try<String>> loader = (keys, env) -> CompletableFuture.completedFuture(
                 keys.stream().map(Try::succeeded).collect(Collectors.toList())
         );
@@ -71,7 +67,6 @@ class DataLoaderFactoryNewDataLoaderWithTryMacMutTest {
 
     @Test
     void newDataLoaderWithTry_context_withOptions() {
-        // covers newDataLoaderWithTry:195
         BatchLoaderWithContext<String, Try<String>> loader = (keys, env) -> CompletableFuture.completedFuture(
                 keys.stream().map(Try::succeeded).collect(Collectors.toList())
         );
@@ -86,7 +81,6 @@ class DataLoaderFactoryNewDataLoaderWithTryMacMutTest {
 
     @Test
     void newDataLoaderWithTry_context_withNameAndOptions() {
-        // covers newDataLoaderWithTry:212
         BatchLoaderWithContext<String, Try<String>> loader = (keys, env) -> CompletableFuture.completedFuture(
                 keys.stream().map(Try::succeeded).collect(Collectors.toList())
         );
