@@ -14,7 +14,6 @@ class DataLoaderFactoryNewDataLoaderMacMutTest {
 
     @Test
     void newDataLoaderWithBatchLoader() {
-        // covers newDataLoader:25
         BatchLoader<String, String> loader = keys -> CompletableFuture.completedFuture(keys);
         DataLoader<String, String> dl = DataLoaderFactory.newDataLoader(loader);
         assertNotNull(dl);
@@ -23,7 +22,6 @@ class DataLoaderFactoryNewDataLoaderMacMutTest {
 
     @Test
     void newDataLoaderWithNameAndBatchLoader() {
-        // covers newDataLoader:39
         BatchLoader<String, String> loader = keys -> CompletableFuture.completedFuture(keys);
         DataLoader<String, String> dl = DataLoaderFactory.newDataLoader("test", loader);
         assertNotNull(dl);
@@ -33,7 +31,6 @@ class DataLoaderFactoryNewDataLoaderMacMutTest {
 
     @Test
     void newDataLoaderWithBatchLoaderAndOptions() {
-        // covers newDataLoader:52
         BatchLoader<String, String> loader = keys -> CompletableFuture.completedFuture(keys);
         DataLoaderOptions options = DataLoaderOptions.newOptions().build();
         DataLoader<String, String> dl = DataLoaderFactory.newDataLoader(loader, options);
@@ -44,7 +41,6 @@ class DataLoaderFactoryNewDataLoaderMacMutTest {
 
     @Test
     void newDataLoaderWithNameBatchLoaderAndOptions() {
-        // covers newDataLoader:66
         BatchLoader<String, String> loader = keys -> CompletableFuture.completedFuture(keys);
         DataLoaderOptions options = DataLoaderOptions.newOptions().build();
         DataLoader<String, String> dl = DataLoaderFactory.newDataLoader("test", loader, options);
@@ -56,7 +52,6 @@ class DataLoaderFactoryNewDataLoaderMacMutTest {
 
     @Test
     void newDataLoaderWithBatchLoaderWithContext() {
-        // covers newDataLoader:132
         BatchLoaderWithContext<String, String> loader = (keys, env) -> CompletableFuture.completedFuture(keys);
         DataLoader<String, String> dl = DataLoaderFactory.newDataLoader(loader);
         assertNotNull(dl);
@@ -65,7 +60,6 @@ class DataLoaderFactoryNewDataLoaderMacMutTest {
 
     @Test
     void newDataLoaderWithBatchLoaderWithContextAndOptions() {
-        // covers newDataLoader:145
         BatchLoaderWithContext<String, String> loader = (keys, env) -> CompletableFuture.completedFuture(keys);
         DataLoaderOptions options = DataLoaderOptions.newOptions().build();
         DataLoader<String, String> dl = DataLoaderFactory.newDataLoader(loader, options);
@@ -76,7 +70,6 @@ class DataLoaderFactoryNewDataLoaderMacMutTest {
 
     @Test
     void newDataLoaderWithNameBatchLoaderWithContextAndOptions() {
-        // covers newDataLoader:159
         BatchLoaderWithContext<String, String> loader = (keys, env) -> CompletableFuture.completedFuture(keys);
         DataLoaderOptions options = DataLoaderOptions.newOptions().build();
         DataLoader<String, String> dl = DataLoaderFactory.newDataLoader("test", loader, options);
