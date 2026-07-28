@@ -13,7 +13,6 @@ public class DelegatingDataLoaderPrimeMacMutTest {
 
     @Test
     void primeWithValueReturnsSelf() {
-        // covers prime:187
         DataLoader<String, String> delegate = TestKit.idLoader();
         DelegatingDataLoader<String, String> loader = new DelegatingDataLoader<>(delegate);
 
@@ -25,7 +24,6 @@ public class DelegatingDataLoaderPrimeMacMutTest {
 
     @Test
     void primeWithErrorReturnsSelf() {
-        // covers prime:193
         DataLoader<String, String> delegate = TestKit.idLoader();
         DelegatingDataLoader<String, String> loader = new DelegatingDataLoader<>(delegate);
 
@@ -37,7 +35,6 @@ public class DelegatingDataLoaderPrimeMacMutTest {
 
     @Test
     void primeWithFutureReturnsSelf() {
-        // covers prime:199
         DataLoader<String, String> delegate = TestKit.idLoader();
         DelegatingDataLoader<String, String> loader = new DelegatingDataLoader<>(delegate);
 
