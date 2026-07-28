@@ -20,7 +20,6 @@ public class PromisedValuesImplSetCauseMacMutTest {
 
     @Test
     public void setCause_wraps_completion_exception_cause() throws Exception {
-        // covers setCause:58
         RuntimeException rootCause = new RuntimeException("root");
         CompletableFuture<String> failingFuture = new CompletableFuture<>();
         failingFuture.completeExceptionally(new CompletionException(rootCause));
@@ -37,7 +36,6 @@ public class PromisedValuesImplSetCauseMacMutTest {
 
     @Test
     public void setCause_sets_non_completion_exception_directly() throws Exception {
-        // covers setCause:58
         RuntimeException directCause = new RuntimeException("direct");
         CompletableFuture<String> failingFuture = new CompletableFuture<>();
         failingFuture.completeExceptionally(directCause);
@@ -54,7 +52,6 @@ public class PromisedValuesImplSetCauseMacMutTest {
 
     @Test
     public void setCause_handles_null_cause_in_completion_exception() throws Exception {
-        // covers setCause:58
         CompletableFuture<String> failingFuture = new CompletableFuture<>();
         failingFuture.completeExceptionally(new CompletionException((Throwable) null));
 
@@ -69,16 +66,13 @@ public class PromisedValuesImplSetCauseMacMutTest {
 
     @Test
     public void setCause_preserves_cause_when_thenAccept_is_used() throws Exception {
-        // covers setCause:58
         RuntimeException rootCause = new RuntimeException("root");
         CompletableFuture<String> failingFuture = new CompletableFuture<>();
         failingFuture.completeExceptionally(new CompletionException(rootCause));
 
         PromisedValues<String> promisedValues = PromisedValues.allOf(asList(failingFuture));
 
-        // Trigger the internal logic that calls setCause via the completion handling
         promisedValues.thenAccept(values -> {
-            // This should not be called as the future failed
         });
 
         await().until(promisedValues::isDone, is(true));

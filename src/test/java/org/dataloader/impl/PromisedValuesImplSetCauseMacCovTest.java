@@ -19,8 +19,7 @@ public class PromisedValuesImplSetCauseMacCovTest {
 
     @Test
     public void setCause_wraps_completion_exception_cause() throws Exception {
-        // When a future fails with a CompletionException wrapping another exception,
-        // setCause should unwrap it and store the root cause.
+        // Verifies unwrapping CompletionException to store root cause
         CompletableFuture<String> f1 = supplyAsync(() -> {
             throw new CompletionException(new IllegalStateException("Root Cause"));
         });
@@ -37,8 +36,7 @@ public class PromisedValuesImplSetCauseMacCovTest {
 
     @Test
     public void setCause_stores_non_completion_exception_directly() throws Exception {
-        // When a future fails with a non-CompletionException,
-        // setCause should store it directly.
+        // Verifies storing non-CompletionException directly
         CompletableFuture<String> f1 = supplyAsync(() -> {
             throw new IllegalArgumentException("Direct Error");
         });
@@ -55,8 +53,7 @@ public class PromisedValuesImplSetCauseMacCovTest {
 
     @Test
     public void setCause_handles_completion_exception_with_null_cause() throws Exception {
-        // When a future fails with a CompletionException that has no cause,
-        // setCause should store the CompletionException itself.
+        // Verifies storing CompletionException when cause is null
         CompletableFuture<String> f1 = supplyAsync(() -> {
             throw new CompletionException("No Cause", null);
         });
