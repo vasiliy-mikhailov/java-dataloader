@@ -11,14 +11,12 @@ class CompletableFutureKitFailedMacMutTest {
 
     @Test
     void failedFutureIsFailed() {
-        // covers failed:49
         CompletableFuture<String> future = CompletableFutureKit.failedFuture(new RuntimeException("boom"));
         assertThat(CompletableFutureKit.failed(future), equalTo(true));
     }
 
     @Test
     void completedFutureIsNotFailed() {
-        // covers failed:49
         CompletableFuture<String> future = new CompletableFuture<>();
         future.complete("ok");
         assertThat(CompletableFutureKit.failed(future), equalTo(false));
@@ -26,7 +24,6 @@ class CompletableFutureKitFailedMacMutTest {
 
     @Test
     void incompleteFutureIsNotFailed() {
-        // covers failed:49
         CompletableFuture<String> future = new CompletableFuture<>();
         assertThat(CompletableFutureKit.failed(future), equalTo(false));
     }
