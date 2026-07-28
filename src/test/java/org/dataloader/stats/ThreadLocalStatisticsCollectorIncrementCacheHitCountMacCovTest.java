@@ -17,17 +17,10 @@ class ThreadLocalStatisticsCollectorIncrementCacheHitCountMacCovTest {
 
     @Test
     void incrementCacheHitCountIncreasesCount() {
-        // Reset to ensure clean state
         collector.resetThread();
-
-        // Initial state
         Statistics initialStats = collector.getStatistics();
         long initialCacheHits = initialStats.getCacheHitCount();
-
-        // Act
         collector.incrementCacheHitCount();
-
-        // Assert
         Statistics afterStats = collector.getStatistics();
         assertThat(afterStats.getCacheHitCount(), equalTo(initialCacheHits + 1));
     }
@@ -35,11 +28,9 @@ class ThreadLocalStatisticsCollectorIncrementCacheHitCountMacCovTest {
     @Test
     void incrementCacheHitCountMultipleTimes() {
         collector.resetThread();
-
         collector.incrementCacheHitCount();
         collector.incrementCacheHitCount();
         collector.incrementCacheHitCount();
-
         Statistics stats = collector.getStatistics();
         assertThat(stats.getCacheHitCount(), equalTo(3L));
     }

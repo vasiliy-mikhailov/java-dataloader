@@ -17,7 +17,6 @@ public class ThreadLocalStatisticsCollectorIncrementCacheHitCountMacMutTest {
 
     @Test
     void incrementCacheHitCountUpdatesOverallStats() {
-        // covers incrementCacheHitCount:88
         collector.incrementCacheHitCount();
         Statistics stats = collector.getOverallStatistics();
         assertThat(stats.getCacheHitCount(), equalTo(1L));
