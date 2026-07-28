@@ -14,7 +14,6 @@ class CompletableFutureKitCauseMacMutTest {
 
     @Test
     void causeReturnsNullForCompletedFuture() {
-        // covers cause:26
         CompletableFuture<String> future = new CompletableFuture<>();
         future.complete("value");
 
@@ -24,7 +23,6 @@ class CompletableFutureKitCauseMacMutTest {
 
     @Test
     void causeReturnsCauseForExecutionException() {
-        // covers cause:37
         CompletableFuture<String> future = new CompletableFuture<>();
         RuntimeException cause = new RuntimeException("boom");
         future.completeExceptionally(cause);
@@ -35,7 +33,6 @@ class CompletableFutureKitCauseMacMutTest {
 
     @Test
     void causeReturnsExecutionExceptionWhenCauseIsNull() {
-        // covers cause:40
         CompletableFuture<String> future = new CompletableFuture<>();
         ExecutionException executionException = new ExecutionException(null);
         future.completeExceptionally(executionException);
@@ -43,26 +40,6 @@ class CompletableFutureKitCauseMacMutTest {
         Throwable result = CompletableFutureKit.cause(future);
         assertThat(result, instanceOf(ExecutionException.class));
         assertThat(result, equalTo(executionException));
-    }
-
-    @Test
-    void causeReturnsNullForNonExceptionallyCompletedFuture() {
-        // covers cause:34
-        CompletableFuture<String> future = new CompletableFuture<>();
-        future.complete("success");
-
-        Throwable result = CompletableFutureKit.cause(future);
-        assertThat(result, nullValue());
-    }
-
-    @Test
-    void causeReturnsNullAfterGetSucceeds() {
-        // covers cause:38
-        CompletableFuture<String> future = new CompletableFuture<>();
-        future.complete("value");
-
-        Throwable result = CompletableFutureKit.cause(future);
-        assertThat(result, nullValue());
     }
 
 }
