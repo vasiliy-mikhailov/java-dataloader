@@ -15,7 +15,7 @@ class DataLoaderFactoryNewMappedDataLoaderMacMutTest {
 
     @Test
     void newMappedDataLoaderWithMappedBatchLoader() {
-        // covers newMappedDataLoader:225
+        // Verifies creation of MappedDataLoader with MappedBatchLoader
         MappedBatchLoader<String, String> loader = keys -> CompletableFuture.completedFuture(
                 Collections.singletonMap("k", "v")
         );
@@ -28,7 +28,7 @@ class DataLoaderFactoryNewMappedDataLoaderMacMutTest {
 
     @Test
     void newMappedDataLoaderWithMappedBatchLoaderAndOptions() {
-        // covers newMappedDataLoader:238
+        // Verifies creation of MappedDataLoader with MappedBatchLoader and Options
         MappedBatchLoader<String, String> loader = keys -> CompletableFuture.completedFuture(
                 Collections.singletonMap("k", "v")
         );
@@ -42,7 +42,7 @@ class DataLoaderFactoryNewMappedDataLoaderMacMutTest {
 
     @Test
     void newMappedDataLoaderWithMappedBatchLoaderAndNameAndOptions() {
-        // covers newMappedDataLoader:251
+        // Verifies creation of MappedDataLoader with MappedBatchLoader, Name, and Options
         MappedBatchLoader<String, String> loader = keys -> CompletableFuture.completedFuture(
                 Collections.singletonMap("k", "v")
         );
@@ -57,7 +57,7 @@ class DataLoaderFactoryNewMappedDataLoaderMacMutTest {
 
     @Test
     void newMappedDataLoaderWithMappedBatchLoaderWithContext() {
-        // covers newMappedDataLoader:318
+        // Verifies creation of MappedDataLoader with MappedBatchLoaderWithContext
         MappedBatchLoaderWithContext<String, String> loader = (keys, env) -> CompletableFuture.completedFuture(
                 Collections.singletonMap("k", "v")
         );
@@ -70,7 +70,7 @@ class DataLoaderFactoryNewMappedDataLoaderMacMutTest {
 
     @Test
     void newMappedDataLoaderWithMappedBatchLoaderWithContextAndOptions() {
-        // covers newMappedDataLoader:331
+        // Verifies creation of MappedDataLoader with MappedBatchLoaderWithContext and Options
         MappedBatchLoaderWithContext<String, String> loader = (keys, env) -> CompletableFuture.completedFuture(
                 Collections.singletonMap("k", "v")
         );
@@ -84,7 +84,7 @@ class DataLoaderFactoryNewMappedDataLoaderMacMutTest {
 
     @Test
     void newMappedDataLoaderWithMappedBatchLoaderWithContextAndNameAndOptions() {
-        // covers newMappedDataLoader:345
+        // Verifies creation of MappedDataLoader with MappedBatchLoaderWithContext, Name, and Options
         MappedBatchLoaderWithContext<String, String> loader = (keys, env) -> CompletableFuture.completedFuture(
                 Collections.singletonMap("k", "v")
         );
