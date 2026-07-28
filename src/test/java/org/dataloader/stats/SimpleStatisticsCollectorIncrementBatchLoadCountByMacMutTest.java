@@ -10,7 +10,6 @@ class SimpleStatisticsCollectorIncrementBatchLoadCountByMacMutTest {
 
     @Test
     void incrementBatchLoadCountByIncrementsBatchInvokeCount() {
-        // covers incrementBatchLoadCountBy:50
         SimpleStatisticsCollector collector = new SimpleStatisticsCollector();
         IncrementBatchLoadCountByStatisticsContext<String> context = new IncrementBatchLoadCountByStatisticsContext<>("key", 1);
         collector.incrementBatchLoadCountBy(1, context);
@@ -20,7 +19,6 @@ class SimpleStatisticsCollectorIncrementBatchLoadCountByMacMutTest {
 
     @Test
     void incrementBatchLoadCountByAddsToBatchLoadCount() {
-        // covers incrementBatchLoadCountBy:51
         SimpleStatisticsCollector collector = new SimpleStatisticsCollector();
         IncrementBatchLoadCountByStatisticsContext<String> context = new IncrementBatchLoadCountByStatisticsContext<>("key", 1);
         collector.incrementBatchLoadCountBy(5, context);
@@ -30,7 +28,6 @@ class SimpleStatisticsCollectorIncrementBatchLoadCountByMacMutTest {
 
     @Test
     void incrementBatchLoadCountByDelegatesToOverload() {
-        // covers incrementBatchLoadCountBy:57
         SimpleStatisticsCollector collector = new SimpleStatisticsCollector();
         collector.incrementBatchLoadCountBy(10);
         Statistics stats = collector.getStatistics();
