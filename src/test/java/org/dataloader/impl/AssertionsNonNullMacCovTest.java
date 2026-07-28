@@ -26,7 +26,7 @@ class AssertionsNonNullMacCovTest {
     void nonNull_throws_when_null() {
         try {
             Assertions.nonNull((String) null);
-            assertThat(false, equalTo(true)); // should not reach here
+            assertThat(false, equalTo(true));
         } catch (NullPointerException e) {
             assertThat(e.getMessage(), equalTo("nonNull object required"));
         }
