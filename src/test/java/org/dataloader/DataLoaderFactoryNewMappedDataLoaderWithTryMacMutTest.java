@@ -15,7 +15,7 @@ class DataLoaderFactoryNewMappedDataLoaderWithTryMacMutTest {
 
     @Test
     void newMappedDataLoaderWithTry_noOptions() {
-        // covers newMappedDataLoaderWithTry:272
+        // Verifies creation of MappedDataLoader with Try and no options
         MappedBatchLoader<String, Try<String>> loader = keys -> CompletableFuture.completedFuture(
                 keys.stream().collect(Collectors.toMap(k -> k, Try::succeeded))
         );
@@ -29,7 +29,7 @@ class DataLoaderFactoryNewMappedDataLoaderWithTryMacMutTest {
 
     @Test
     void newMappedDataLoaderWithTry_withOptions() {
-        // covers newMappedDataLoaderWithTry:288
+        // Verifies creation of MappedDataLoader with Try and options
         MappedBatchLoader<String, Try<String>> loader = keys -> CompletableFuture.completedFuture(
                 keys.stream().collect(Collectors.toMap(k -> k, Try::succeeded))
         );
@@ -45,7 +45,7 @@ class DataLoaderFactoryNewMappedDataLoaderWithTryMacMutTest {
 
     @Test
     void newMappedDataLoaderWithTry_withName() {
-        // covers newMappedDataLoaderWithTry:305
+        // Verifies creation of MappedDataLoader with Try, name, and options
         MappedBatchLoader<String, Try<String>> loader = keys -> CompletableFuture.completedFuture(
                 keys.stream().collect(Collectors.toMap(k -> k, Try::succeeded))
         );
@@ -62,7 +62,7 @@ class DataLoaderFactoryNewMappedDataLoaderWithTryMacMutTest {
 
     @Test
     void newMappedDataLoaderWithTry_context_noOptions() {
-        // covers newMappedDataLoaderWithTry:365
+        // Verifies creation of MappedDataLoader with Try, context, and no options
         MappedBatchLoaderWithContext<String, Try<String>> loader = (keys, env) -> CompletableFuture.completedFuture(
                 keys.stream().collect(Collectors.toMap(k -> k, Try::succeeded))
         );
@@ -76,7 +76,7 @@ class DataLoaderFactoryNewMappedDataLoaderWithTryMacMutTest {
 
     @Test
     void newMappedDataLoaderWithTry_context_withOptions() {
-        // covers newMappedDataLoaderWithTry:381
+        // Verifies creation of MappedDataLoader with Try, context, and options
         MappedBatchLoaderWithContext<String, Try<String>> loader = (keys, env) -> CompletableFuture.completedFuture(
                 keys.stream().collect(Collectors.toMap(k -> k, Try::succeeded))
         );
@@ -92,7 +92,7 @@ class DataLoaderFactoryNewMappedDataLoaderWithTryMacMutTest {
 
     @Test
     void newMappedDataLoaderWithTry_context_withName() {
-        // covers newMappedDataLoaderWithTry:398
+        // Verifies creation of MappedDataLoader with Try, context, name, and options
         MappedBatchLoaderWithContext<String, Try<String>> loader = (keys, env) -> CompletableFuture.completedFuture(
                 keys.stream().collect(Collectors.toMap(k -> k, Try::succeeded))
         );
