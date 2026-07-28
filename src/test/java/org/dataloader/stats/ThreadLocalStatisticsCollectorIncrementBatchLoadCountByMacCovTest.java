@@ -1,6 +1,5 @@
 package org.dataloader.stats;
 
-import org.dataloader.stats.context.IncrementBatchLoadCountByStatisticsContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

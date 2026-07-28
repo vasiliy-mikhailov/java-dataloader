@@ -17,7 +17,6 @@ class ThreadLocalStatisticsCollectorIncrementBatchLoadCountByMacMutTest {
 
     @Test
     void incrementBatchLoadCountByWithDeltaAndContextOverall() {
-        // covers incrementBatchLoadCountBy:70
         collector.incrementBatchLoadCountBy(3, new org.dataloader.stats.context.IncrementBatchLoadCountByStatisticsContext<>("key", 3));
         Statistics overallStats = collector.getOverallStatistics();
         assertThat(overallStats.getBatchLoadCount(), equalTo(3L));
